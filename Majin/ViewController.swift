@@ -17,6 +17,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // View the initial position and feature points for reference
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -62,6 +65,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    /* Add a 2D ball on touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+        guard let hitFeature = results.last else { return }
+        let hitTransform = hitFeature.worldTransform
+        let hitPosition = SCNVector3Make(hitTransform.columns.3.x,
+                                         hitTransform.columns.3.y,
+                                         hitTransform.columns.3.z)
+        createBall(hitPosition: hitPosition)
+    }
+     
+    func createBall(hitPosition : SCNVector3) {
+        let newBall = SCNSphere(radius: 0.01)
+        let newBallNode = SCNNode(geometry: newBall)
+        newBallNode.position = hitPosition
+        self.sceneView.scene.rootNode.addChildNode(newBallNode)
+    }
+    */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

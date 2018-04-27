@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F93060792093D5AB00019BEF /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93060782093D5AB00019BEF /* TextConstants.swift */; };
 		F9E9D713208911DE0044DD1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9D712208911DE0044DD1F /* AppDelegate.swift */; };
 		F9E9D715208911DE0044DD1F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D714208911DE0044DD1F /* art.scnassets */; };
 		F9E9D717208911DF0044DD1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9D716208911DF0044DD1F /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F93060782093D5AB00019BEF /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
 		F9E9D70F208911DE0044DD1F /* Majin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Majin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9D712208911DE0044DD1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E9D714208911DE0044DD1F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F93060772093D56800019BEF /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				F93060782093D5AB00019BEF /* TextConstants.swift */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
 		F9E9D706208911DE0044DD1F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		F9E9D711208911DE0044DD1F /* Majin */ = {
 			isa = PBXGroup;
 			children = (
+				F93060772093D56800019BEF /* Speech */,
 				F9E9D712208911DE0044DD1F /* AppDelegate.swift */,
 				F9E9D714208911DE0044DD1F /* art.scnassets */,
 				F9E9D716208911DF0044DD1F /* ViewController.swift */,
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E9D717208911DF0044DD1F /* ViewController.swift in Sources */,
+				F93060792093D5AB00019BEF /* TextConstants.swift in Sources */,
 				F9E9D713208911DE0044DD1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

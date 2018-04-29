@@ -14,4 +14,6 @@ class TextConstants {
     static let TouchFeedback = "How can I help you?"
     
     static let ConfirmPrefix = "Did you say "
+    
+    static let ErrorMsg = "Oh! Error"
 }

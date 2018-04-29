@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F93060792093D5AB00019BEF /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93060782093D5AB00019BEF /* TextConstants.swift */; };
+		F930607B2093EFC000019BEF /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F930607A2093EFBF00019BEF /* sample.mp3 */; };
 		F9E9D713208911DE0044DD1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9D712208911DE0044DD1F /* AppDelegate.swift */; };
 		F9E9D715208911DE0044DD1F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D714208911DE0044DD1F /* art.scnassets */; };
 		F9E9D717208911DF0044DD1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9D716208911DF0044DD1F /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		F93060782093D5AB00019BEF /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
+		F930607A2093EFBF00019BEF /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 		F9E9D70F208911DE0044DD1F /* Majin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Majin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9D712208911DE0044DD1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E9D714208911DE0044DD1F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		F93060772093D56800019BEF /* Speech */ = {
 			isa = PBXGroup;
 			children = (
+				F930607A2093EFBF00019BEF /* sample.mp3 */,
 				F93060782093D5AB00019BEF /* TextConstants.swift */,
 			);
 			path = Speech;
@@ -194,6 +197,7 @@
 				F9E9D715208911DE0044DD1F /* art.scnassets in Resources */,
 				F9E9D71F208911E10044DD1F /* LaunchScreen.storyboard in Resources */,
 				F9E9D71C208911E10044DD1F /* Assets.xcassets in Resources */,
+				F930607B2093EFC000019BEF /* sample.mp3 in Resources */,
 				F9E9D71A208911DF0044DD1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

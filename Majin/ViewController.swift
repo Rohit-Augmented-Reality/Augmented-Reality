@@ -15,6 +15,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     let synth = AVSpeechSynthesizer()
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let scene = SCNScene(named: "art.scnassets/Iron_Man/Iron_Man.scn")!
         // Set the scene to the view
         sceneView.scene = scene
+        
+        // MARK - Setup the audio player
+        do {
+            let filePath = URL.init(fileURLWithPath: Bundle.main.path(forResource: "sample", ofType: "mp3")!)
+            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            audioPlayer.play()
+        }
+        catch {
+            SpeakText(text: TextConstants.ErrorMsg + " in audio player")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +66,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let utterance = AVSpeechUtterance(string: TextConstants.WelcomeMsg)
+    func SpeakText(text: String) {
+        let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         synth.speak(utterance)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        SpeakText(text: TextConstants.WelcomeMsg)
+        
+//        do {
+//            SpeakText(text: "Trying start 2")
+//            try sceneView.audioEngine.start()
+//            SpeakText(text: "start 2 done")
+//        }
+//        catch {
+//            SpeakText(text: TextConstants.ErrorMsg)
+//        }
+        
     }
     
 /*

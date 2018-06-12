@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91CD2DB20CF782300372C48 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91CD2DA20CF782300372C48 /* Helpers.swift */; };
 		F93060792093D5AB00019BEF /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93060782093D5AB00019BEF /* TextConstants.swift */; };
 		F930607B2093EFC000019BEF /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F930607A2093EFBF00019BEF /* sample.mp3 */; };
 		F9E9D713208911DE0044DD1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9D712208911DE0044DD1F /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91CD2DA20CF782300372C48 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F93060782093D5AB00019BEF /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
 		F930607A2093EFBF00019BEF /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 		F9E9D70F208911DE0044DD1F /* Majin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Majin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,7 @@
 			children = (
 				F930607A2093EFBF00019BEF /* sample.mp3 */,
 				F93060782093D5AB00019BEF /* TextConstants.swift */,
+				F91CD2DA20CF782300372C48 /* Helpers.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				F9E9D717208911DF0044DD1F /* ViewController.swift in Sources */,
 				F93060792093D5AB00019BEF /* TextConstants.swift in Sources */,
 				F9E9D713208911DE0044DD1F /* AppDelegate.swift in Sources */,
+				F91CD2DB20CF782300372C48 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

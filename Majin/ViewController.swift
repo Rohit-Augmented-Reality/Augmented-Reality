@@ -10,12 +10,11 @@ import ARKit
 import AVFoundation
 import SceneKit
 import UIKit
+import Speech
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    let synth = AVSpeechSynthesizer()
-    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,30 +32,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
         
-        // MARK - Setup the audio player
-        do {
-            let filePath = URL.init(fileURLWithPath: Bundle.main.path(forResource: "sample", ofType: "mp3")!)
-            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
-            audioPlayer.play()
-        }
-        catch {
-            SpeakText(text: TextConstants.ErrorMsg + " in audio player")
-        }
+        // Play audio file
+        PlayAudioFile(fileName: "sample", fileExtension: "mp3")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
-        // Run the view's session
         sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         // Pause the view's session
         sceneView.session.pause()
     }
@@ -64,12 +51,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
-    }
-    
-    func SpeakText(text: String) {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        synth.speak(utterance)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +67,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    // Speak on touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        SpeakText(text: TextConstants.TouchFeedback)
+    }
+    
 /*
     // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
@@ -94,32 +80,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
-    /* Add a 2D ball on touch
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
-        guard let hitFeature = results.last else { return }
-        let hitTransform = hitFeature.worldTransform
-        let hitPosition = SCNVector3Make(hitTransform.columns.3.x,
-                                         hitTransform.columns.3.y,
-                                         hitTransform.columns.3.z)
-        createBall(hitPosition: hitPosition)
-    }
-     
-    func createBall(hitPosition : SCNVector3) {
-        let newBall = SCNSphere(radius: 0.01)
-        let newBallNode = SCNNode(geometry: newBall)
-        newBallNode.position = hitPosition
-        self.sceneView.scene.rootNode.addChildNode(newBallNode)
-    }
-    */
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let utterance = AVSpeechUtterance(string: TextConstants.TouchFeedback)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        synth.speak(utterance)
-    }
-    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
